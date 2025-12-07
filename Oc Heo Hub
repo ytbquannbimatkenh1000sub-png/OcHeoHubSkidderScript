@@ -1,0 +1,483 @@
+Config = {
+    Team = "Pirates",
+    Configuration = {
+        HopWhenIdle = true,
+        AutoHop = true,
+        AutoHopDelay = 60 * 60,
+        FpsBoost = true,
+        blackscreen = false
+    },
+    Items = {
+
+        -- Melees 
+        AutoFullyMelees = true,
+
+        -- Swords 
+        Saber = true,
+        CursedDualKatana = false,
+
+        -- Guns 
+        SoulGuitar = false,
+
+        -- Upgrades 
+
+        RaceV2 = true
+
+    },
+    Settings = {
+        StayInSea2UntilHaveDarkFragments = false
+    }
+}
+
+function hoangtuveu()
+    local J = {'Task1', 'Task2', "Currencies", 'Melees', 'LiveTime', 'DebugLine'}
+    local W = {Instances = {}}
+    local K = true
+    local a = false
+    local h = game.Players.LocalPlayer
+    repeat
+        task.wait()
+    until game.CoreGui
+    local h = Instance.new('ScreenGui')
+    local X = Instance.new('TextLabel')
+    local w = Instance.new("UIStroke")
+    local w = Instance.new('UIStroke')
+    local w = Instance.new("TextLabel")
+    local w = Instance.new("ImageButton")
+    local D = Instance.new("Frame")
+    local y = Instance.new("UIStroke")
+    local L = Instance.new("TextLabel")
+    local b = {}
+    h.Name = "Skidder Oc Heo Hub"
+    h.Parent = game:GetService('CoreGui')
+    h.Enabled = true
+    h.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+    h.IgnoreGuiInset = true
+    if Config.Configuration.FpsBoost then
+        spawn(function()
+            pcall(loadstring(game:HttpGet("https://raw.githubusercontent.com/sucvatthieunang/Trackstat/refs/heads/main/cac")))
+        end)
+    end
+    if Config.Configuration.blackscreen then
+        game:GetService('Lighting').ExposureCompensation = -math.huge
+    end
+    X.Name = 'NameHub'
+    X.Parent = h
+    X.AnchorPoint = Vector2.new(0.5, 0.5)
+    X.Position = UDim2.new(0.5, 0, 0.3, 0)
+    X.Size = UDim2.new(1, 0, 0, 80)
+    X.BackgroundTransparency = 0.999
+    X.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    X.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    X.BorderSizePixel = 0
+    X.Font = Enum.Font.FredokaOne
+    X.Text = "ARYA"
+    local C = Instance.new("UIStroke")
+    C.Parent = X
+    C.Color = Color3.fromRGB(0, 0, 0)
+    C.Thickness = 1
+    X.TextColor3 = Color3.fromRGB(9, 255, 248)
+    X.TextSize = 50
+    D.Name = 'ToggleContainer'
+    D.Parent = h
+    D.AnchorPoint = Vector2.new(1, 0)
+    D.Position = UDim2.new(1, -20.0, 0, 20)
+    D.Size = UDim2.new(0, 50, 0, 50)
+    D.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+    D.BackgroundTransparency = 0.2
+    D.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    D.BorderSizePixel = 0
+    D.ClipsDescendants = true
+    local C = Instance.new('UICorner')
+    C.CornerRadius = UDim.new(1, 0)
+    C.Parent = D
+    y.Parent = D
+    y.Color = Color3.fromRGB(9, 255, 248)
+    y.Thickness = 2
+    w.Name = 'ToggleButton'
+    w.Parent = D
+    w.AnchorPoint = Vector2.new(0.5, 0.5)
+    w.Position = UDim2.new(0.5, 0, 0.5, 0)
+    w.Size = UDim2.new(1, 0, 1, 0)
+    w.BackgroundTransparency = 1
+    w.BorderSizePixel = 0
+    L.Name = "ToggleIcon"
+    L.Parent = D
+    L.AnchorPoint = Vector2.new(0.5, 0.5)
+    L.Position = UDim2.new(0.5, 0, 0.5, 0)
+    L.Size = UDim2.new(0.7, 0, 0.7, 0)
+    L.BackgroundTransparency = 1
+    L.BorderSizePixel = 0
+    L.Font = Enum.Font.GothamBold
+    L.Text = "đŸ˜€đŸ˜¶"
+    L.TextColor3 = Color3.fromRGB(255, 255, 255)
+    L.TextSize = 24
+    L.TextScaled = true
+    local function C(p, o, z)
+        local z = Instance.new("UIStroke")
+        local v = Instance.new('TextLabel')
+        v.Name = "hmph ><"
+        v.Parent = h
+        v.AnchorPoint = Vector2.new(0.5, 0.5)
+        v.Position = o
+        v.Size = UDim2.new(0, 200, 0, 30)
+        v.BackgroundTransparency = 0.999
+        v.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        v.BorderColor3 = Color3.fromRGB(0, 0, 0)
+        v.BorderSizePixel = 0
+        v.Font = Enum.Font.FredokaOne
+        v.Text = p
+        v.TextColor3 = Color3.fromRGB(255, 255, 255)
+        v.TextSize = 13
+        v.RichText = true
+        z.Parent = v
+        z.Color = Color3.fromRGB(0, 0, 0)
+        z.Thickness = 1
+        return v
+    end
+    MainTextLabel = C(" ", UDim2.new(0.5, 0, 0.4, 0))
+    W.Instances.MainTextLabel = MainTextLabel
+    for p, o in pairs(J) do W.Instances[o] = C("...", UDim2.new(0.5, 0, 0.45 + (.05 * p), 0)) end
+    local J = {}
+    function J:Create()
+        local C = Instance.new('Frame')
+        C.Name = "BlurFrame"
+        C.Parent = h
+        C.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+        C.BackgroundTransparency = 1
+        C.BorderSizePixel = 0
+        C.Size = UDim2.new(1, 0, 1, 0)
+        C.Position = UDim2.new(0, 0, 0, 0)
+        C.ZIndex = 0
+        self.blurFrame = C
+        self.blurIntensity = 0
+        return self
+    end
+    function J:SetIntensity(C)
+        C = math.clamp(C, 0, 0.95)
+        self.blurIntensity = C
+        local p = game:GetService('TweenService')
+        local o = TweenInfo.new(0.3, Enum.EasingStyle.Cubic, Enum.EasingDirection.Out)
+        local z = p:Create(self.blurFrame, o, {BackgroundTransparency = 1 - C})
+        z:Play()
+        if not self.blurEffect then
+            self.blurEffect = Instance.new("BlurEffect")
+            self.blurEffect.Name = 'CustomBlur'
+            self.blurEffect.Parent = game.Lighting
+            self.blurEffect.Enabled = true
+        end
+        local z = p:Create(self.blurEffect, o, {Size = C * 30})
+        z:Play()
+        for z, z in pairs(b) do
+            if z and z.Parent then
+                local v = p:Create(z, o, {BackgroundTransparency = z._originalTransparency + (C * 0.5)})
+                v:Play()
+            end
+        end
+    end
+    function J:RegisterUI(C)
+        if C and C:IsA('GuiObject') then
+            C._originalTransparency = C.BackgroundTransparency
+            table.insert(b, C)
+        end
+    end
+    local b = J:Create()
+    function SetText(J, C)
+        task.spawn(function()
+            local p = W.Instances[J]
+            if not p then return end
+            if not K then
+                p.Text = C
+                return
+            end
+            if p.Text == C then return end
+            local J = game:GetService("TweenService")
+            local o = TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+            local z = J:Create(p, o, {TextTransparency = 1, TextStrokeTransparency = 1})
+            z:Play()
+            z.Completed:Wait()
+            p.Text = C
+            local C = TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+            local o = J:Create(p, C, {TextTransparency = 0, TextStrokeTransparency = 0})
+            o:Play()
+        end)
+    end
+    local J = game:GetService("Lighting").ExposureCompensation
+    function ToggleUI(J)
+        a = J or not a
+        local J = {X, MainTextLabel}
+        for X, X in pairs(W.Instances) do table.insert(J, X) end
+        local X = game:GetService("TweenService")
+        local C = TweenInfo.new(0.5, Enum.EasingStyle.Quart, Enum.EasingDirection.InOut)
+        if a then
+            L.Text = "đŸ˜€đŸ˜¶"
+            local p = X:Create(L, TweenInfo.new(0.5, Enum.EasingStyle.Back, Enum.EasingDirection.Out), {Rotation = 360})
+            p:Play()
+            p.Completed:Connect(function() L.Rotation = 0 end)
+            for p, p in pairs(J) do
+                p.TextTransparency = 1
+                local o = X:Create(p, C, {TextTransparency = 0})
+                if p:FindFirstChildOfClass('UIStroke') then
+                    p:FindFirstChildOfClass('UIStroke').Transparency = 1
+                    local z = X:Create(p:FindFirstChildOfClass('UIStroke'), C, {Transparency = 0})
+                    z:Play()
+                end
+                o:Play()
+            end
+            b:SetIntensity(0.4)
+        else
+            L.Text = 'đŸ˜¶'
+            local p = X:Create(L, TweenInfo.new(0.3, Enum.EasingStyle.Back, Enum.EasingDirection.In), {Size = UDim2.new(0.3, 0, 0.3, 0)})
+            p:Play()
+            p.Completed:Connect(function()
+                local p = X:Create(L, TweenInfo.new(0.3, Enum.EasingStyle.Back, Enum.EasingDirection.Out), {Size = UDim2.new(0.7, 0, 0.7, 0)})
+                p:Play()
+            end)
+            for p, p in pairs(J) do
+                local J = X:Create(p, C, {TextTransparency = 1})
+                if p:FindFirstChildOfClass('UIStroke') then
+                    local o = X:Create(p:FindFirstChildOfClass("UIStroke"), C, {Transparency = 1})
+                    o:Play()
+                end
+                J:Play()
+            end
+            b:SetIntensity(0)
+        end
+        K = a
+    end
+    function W.RegisterForBlur(J) b:RegisterUI(J) end
+    w.MouseButton1Click:Connect(function() ToggleUI() end)
+    w.MouseEnter:Connect(function()
+        local J = game:GetService('TweenService')
+        local X = function()
+            local C = J:Create(D, TweenInfo.new(0.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {Size = UDim2.new(0, 55, 0, 55)})
+            local p = J:Create(y, TweenInfo.new(0.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {Color = Color3.fromRGB(0, 255, 255), Thickness = 3})
+            C:Play()
+            p:Play()
+        end
+        X()
+    end)
+    w.MouseLeave:Connect(function()
+        local J = game:GetService('TweenService')
+        local X = TweenInfo.new(0.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+        local w = J:Create(D, X, {Size = UDim2.new(0, 50, 0, 50)})
+        local D = J:Create(y, X, {Color = Color3.fromRGB(9, 255, 248), Thickness = 2})
+        w:Play()
+        D:Play()
+    end)
+    function W.ToggleInterface(J)
+        a = J
+        local a = game:GetService('TweenService')
+        local a = TweenInfo.new(0.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+        if J then
+            h.Enabled = false
+            L.Text = "đŸ˜€đŸ˜¶"
+            b:SetIntensity(0.4)
+        else
+            L.Text = "đŸ˜¶"
+            b:SetIntensity(0)
+        end
+        K = J
+    end
+    local function J() end
+    J()
+    ToggleUI(true)
+    W.SetText = SetText
+    W.ToggleUI = ToggleUI
+    W.BlurManager = b
+    if not isfile("fluent.lua") then
+        writefile('fluent.lua', game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))
+    end
+    local J = loadstring(readfile('fluent.lua'))()
+    local K = Instance.new('Animation')
+    K.AnimationId = 'http://www.roblox.com/asset/?id=1elutruahuabuahd'
+    getgenv().alert = function(a, h)
+        pcall(function() J:Notify({Title = a or '', Content = h or '', Duration = 5}) end)
+    end
+    alert("cac", "Endpoint reached")
+    local J = 'https://files.lumitone.xyz/'
+    r[3][r[2]] = os.time()
+    OldSessionTime = isfile('.tdif-' .. game.Players.LocalPlayer.Name) and tonumber(readfile(".tdif-" .. game.Players.LocalPlayer.Name)) or 0
+    repeat
+        task.wait()
+        game.ReplicatedStorage.Remotes.CommF_:InvokeServer("SetTeam", Config.Team)
+    until game.Players.LocalPlayer.Character
+    alert("team assembled")
+    repeat wait() until game.Players.LocalPlayer.Character
+    spawn(function()
+        game:GetService("Players").LocalPlayer.PlayerScripts:WaitForChild('NewIslandLOD', 9999):Destroy()
+        game:GetService("Players")
+        LocalPlayer.PlayerScripts:WaitForChild('IslandLOD', 9999):Destroy()
+    end)
+    alert('wait 1', 'ok')
+    local J = {'RawConstants', "Utilly", "QuestManager", 'SpawnRegionLoader', 'TweenController', "AttackController", 'CombatController', 'FunctionsHandler', "Hooks", "Debug", "Hop", "Storage"}
+    StartTick = tick()
+    repeat
+        task.wait()
+    until SetText
+    alert('load 2')
+    SetText('MainTextLabel', 'Initalizing Script..')
+    local J = "Rua_Hub/Blox_Fruit/Assets/"
+    ScriptStorage = {IsInitalized = false, PlayerData = {}, Melees = {}, CurrentMeleeData = {}, Enemies = {}, Tools = {}, Backpack = {}, IgnoreStoreFruits = {}, Connections = {LocalPlayer = {}}, Task = {}, Tracebacks = {}, TaskController = {}, TracebackUpdater = {}, Interface = W, NPCs = {}, Map = {}}
+    Players = game.Players
+    LocalPlayer = Players.LocalPlayer
+    Character = Players.LocalPlayer.Character
+    Humanoid = Character:WaitForChild('Humanoid')
+    HumanoidRootPart = Character:WaitForChild("HumanoidRootPart")
+    PlayerGui = LocalPlayer:WaitForChild('PlayerGui', 10)
+    Lighting = game:GetService('Lighting')
+    Services = {}
+    setmetatable(Services, {__index = function(J, J) return game:GetService(J) end})
+    setmetatable(ScriptStorage.Enemies, {__index = function(J, J) return Services.Workspace.Enemies:FindFirstChild(J) or Services.ReplicatedStorage:FindFirstChild(J) end})
+    setmetatable(ScriptStorage.Map, {__index = function(J, J) return Services.Workspace.Map:FindFirstChild(J) or Services.Workspace:FindFirstChild(J) end})
+    setmetatable(ScriptStorage.Tools, {__index = function(J, J) return LocalPlayer.Character:FindFirstChild(J) or LocalPlayer.Backpack:FindFirstChild(J) end})
+    setmetatable(ScriptStorage.NPCs, {__index = function(J, J) if not J then return end; return workspace.NPCs:FindFirstChild(J) or game.ReplicatedStorage.NPCs:FindFirstChild(J) end})
+    function CreateTraceback(J, W) table.insert(ScriptStorage.Tracebacks, (GetCurrentDateTime() .. ' ( ' .. DispTime(os.time() - r[3][r[2]], true) .. ' ) after execution | ' .. J .. " | " .. W)) end
+    function SetTask(J, W)
+        if ScriptStorage.Task[J] == W then return end
+        local a = {MainTask = "Task1", SubTask = 'Task2'}
+        if a[J] then if SetText then SetText(a[J], J .. ' : ' .. W) end end
+        ScriptStorage.Task[J] = W
+        ScriptStorage.Task[J .. '-d'] = os.time()
+    end
+    Remotes = {}
+    BindedMeleeNPCNames = {BlackLeg = 'Dark Step Teacher', Electro = "Mad Scientist", FishmanKarate = "Water Kung-fu Teacher", DeathStep = "Phoeyu, the Reformed", SharkmanKarate = 'Sharkman Teacher', DragonTalon = "Uzoth", ElectricClaw = 'Previous Hero', Godhuman = "Ancient Monk"}
+    local J = {}
+    setmetatable(Remotes, {__index = function(W, W)
+        if W ~= 'CommF_' then
+            print('captured unregistered signal', key)
+            return Services.ReplicatedStorage.Remotes[W]
+        end
+        local W = {InvokeServer = function(a, ...)
+            print('remote fired', ...)
+            local a, h = ...
+            if string.find(a, "Buy") == 1 and not h then
+                local h = string.gsub(a, 'Buy', "")
+                if BindedMeleeNPCNames then
+                    if table.find(J, h) then
+                        local a = ScriptStorage.NPCs[BindedMeleeNPCNames[h]]
+                        if a then
+                            local h = a.WorldPivot
+                            if CaculateDistance(h) > 10 then
+                                repeat
+                                    wait(1)
+                                    TweenController.Create(h.Position)
+                                until CaculateDistance(h) < 10
+                                task.wait(3)
+                                Services.ReplicatedStorage.Remotes.CommF_:InvokeServer(...)
+                            end
+                        end
+                    end
+                end
+            end
+            return Services.ReplicatedStorage.Remotes.CommF_:InvokeServer(...)
+        end}
+        return W
+    end})
+    Tasks = {}
+    function AwaitUntilPlayerLoaded(W, a)
+        repeat task.wait() until W.Character
+        W.Character:WaitForChild('Humanoid')
+        repeat task.wait() until W.Character.Humanoid.Health > 0
+    end
+    function AddPoint()
+        local W = {}
+        local a
+        for h, h in LocalPlayer.Data.Stats:GetChildren() do
+            if h and h:FindFirstChild('Level') then W[h.Name] = h.Level.Value end
+        end
+        if W.Defense < MaxLevel and (W.Defense < (ScriptStorage.PlayerData.Level / 80) or MaxLevel - W.Melee < 100) then
+            a = 'Defense'
+        elseif W.Melee < MaxLevel then
+            a = "Melee"
+        else
+            a = 'Sword'
+        end
+        Remotes.CommF_:InvokeServer("AddPoint", a, 999)
+    end
+    local W = {Currencies = {Level = "#00FF48", Beli = "#FF7800", Fragments = "#6C00FF"}, Races = {}}
+    function RefreshPlayerData()
+        for a, a in LocalPlayer.Data:GetChildren() do pcall(function() ScriptStorage.PlayerData[a.Name] = a.Value end) end
+        local a = ""
+        for h, X in ScriptStorage.PlayerData do
+            local w = W.Currencies[h]
+            if w then a = a .. '<font color="' .. w .. '">' .. h .. "</font>: " .. X .. ' ' end
+        end
+        if ScriptStorage.Interface then SetText('Currencies', a) end
+    end
+    function RefreshRace()
+        local W, a = Remotes.CommF_:InvokeServer('Alchemist', "1"), Remotes.CommF_:InvokeServer("Wenlocktoad", "1")
+        ScriptStorage.PlayerData.RaceLevel = 1
+        if LocalPlayer.Character:FindFirstChild("RaceTransformed") then
+            ScriptStorage.PlayerData.RaceLevel = 4
+        elseif a == -2.0 then
+            ScriptStorage.PlayerData.RaceLevel = 3
+        elseif W == -2.0 then
+            ScriptStorage.PlayerData.RaceLevel = 2
+        end
+    end
+    function RefreshInventory()
+        ScriptStorage.Backpack2 = {}
+        for W, W in Remotes.CommF_:InvokeServer('getInventory') do ScriptStorage.Backpack2[W.Name] = W end
+        ScriptStorage.Backpack = ScriptStorage.Backpack2
+    end
+    function ResearchMoves(W)
+        if W and tostring(W) == 'V' then
+            if ScriptStorage.Connections.BurstCheck then
+                ScriptStorage.Connections.BurstCheck:Disconnect()
+                task.wait(1)
+            end
+            print('[ Debug ] Registering burst', W)
+            ScriptStorage.Connections.BurstCheck = W.Cooldown:GetPropertyChangedSignal("AbsoluteSize"):Connect(function()
+                if EnablingBurstDebounce and os.time() - EnablingBurstDebounce < 10 then return end
+                local a = W.Cooldown.AbsoluteSize.X
+                if a < 3 then
+                    EnablingBurstDebounce = os.time()
+                    task.wait(5)
+                    SendKey('V', 0)
+                end
+            end)
+        end
+    end
+    function CheckMeleeBurstMove(W)
+        if W.Name == "Black Leg" or W.Name == "Death Step" then
+            local a = PlayerGui.Main.Skills:WaitForChild(W.Name, 9)
+            ResearchMoves(a:WaitForChild("V"))
+        end
+    end
+    function RefreshMelees(W)
+        local a = ''
+        for h, X in ScriptStorage.Melees do a = a .. h .. ": " .. X .. " " end
+        a = a == '' and '[0]' or a
+        if W then return a end
+        if ScriptStorage.Interface then SetText('Melees', a) end
+    end
+    function MeleeCheck(W)
+        print('Melee check', W)
+        if W and typeof(W) == "Instance" and W:IsA("Tool") then
+            if W.ToolTip == "Melee" then
+                if ScriptStorage.Connections.Melees then ScriptStorage.Connections.Melees:Disconnect() end
+                ScriptStorage.CurrentMeleeData.Name = W.Name
+                pcall(function() ScriptStorage.Connections.Melees:Destroy() end)
+                ScriptStorage.Connections.Melees = W.Level.Changed:Connect(function(a)
+                    ScriptStorage.Melees[W.Name] = a
+                    RefreshMelees()
+                end)
+                ScriptStorage.Melees[W.Name] = W.Level.Value
+                RefreshMelees()
+            elseif string.find(tostring(W), "Fruit") then
+                task.spawn(function()
+                    if table.find(ScriptStorage.IgnoreStoreFruits, W:GetAttribute('OriginalName')) then return end
+                    local a = Remotes.CommF_:InvokeServer("StoreFruit", W:GetAttribute("OriginalName"), W)
+                end)
+            end
+        end
+    end
+    SetText('MainTextLabel', 'Refreshing Player Data')
+    MeleeCheck(LocalPlayer.Character:FindFirstChildOfClass('Tool'))
+    RefreshPlayerData()
+    function RegisterLocalPlayerEventsConnection()
+        task.spawn(function()
+            task.wait(6)
+            if LocalPlayer.Character:FindFirstChild('HasBuso') then return end
+            Remotes.CommF_:InvokeServer("Buso")
